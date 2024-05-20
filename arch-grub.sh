@@ -17,7 +17,7 @@ mkswap "${SWAP}"
 mkfs.fat -F 32 -n "${EFI}"
 
 # Mount
-mount "${ROOT}" /mnt
+mount -t ext4 "${ROOT}" /mnt
 swapon "${SWAP}"
 mkdir -p /mnt/boot/efi
 mount "${EFI}" /mnt/boot/efi
