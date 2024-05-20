@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-
+lsblk
 echo "Enter Root paritition: (example /dev/sda3)"
 read ROOT
 
