@@ -8,7 +8,7 @@ read ROOT
 echo "Enter SWAP paritition: (example /dev/sda2)"
 read SWAP
 
-echo "Enter EFI paritition: (example /dev/sda1 or /dev/nvme0n1p1)"
+echo "Enter EFI paritition: (/dev/nvme0n1p1 or /dev/sda1)"
 read EFI
 
 # Formats
