@@ -4,7 +4,7 @@ My own arch install script to make life easier while setting up arch the way I l
 Cloning the script on a live arch iso: `curl https://raw.githubusercontent.com/Atops93/archinstall`
 
 cd into directory:
-`cd ato-archinstall`
+`cd archinstall`
 
 ### Choosing the bootloader.
 Run `./arch-grub.sh` to install grub.
