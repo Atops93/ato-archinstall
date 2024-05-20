@@ -1,4 +1,7 @@
 #!/usr/bin/env bash
+echo --------------------------------------------
+lsblk
+echo --------------------------------------------
 echo "Enter Root paritition: (example /dev/sda3)"
 read ROOT
 
@@ -7,10 +10,6 @@ read SWAP
 
 echo "Enter EFI paritition: (example /dev/sda1 or /dev/nvme0n1p1)"
 read EFI
-
-echo --------
-      lsblk
-echo --------
 
 mkfs.ext4 "ROOT" "${ROOT}"
 mkswap "${SWAP}"
