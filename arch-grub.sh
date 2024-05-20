@@ -11,10 +11,12 @@ read SWAP
 echo "Enter EFI paritition: (example /dev/sda1 or /dev/nvme0n1p1)"
 read EFI
 
-mkfs.ext4 "ROOT" "${ROOT}"
+# Formats
+mkfs.ext4 -L "ROOT" "${ROOT}"
 mkswap "${SWAP}"
-mkfs.fat -F 32 "${EFI}"
+mkfs.fat -F 32 -n "${EFI}"
 
+# Mount
 mount "${ROOT}" /mnt
 swapon "${SWAP}"
 mkdir -p /mnt/boot/efi
