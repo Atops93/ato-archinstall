@@ -7,6 +7,7 @@ read SWAP
 
 echo "Enter EFI paritition: (example /dev/sda1 or /dev/nvme0n1p1)"
 read EFI
+
 echo --------
       lsblk
 echo --------
