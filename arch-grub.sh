@@ -1,19 +1,23 @@
 #!/usr/bin/env bash
-
+echo --------------------------------------------
+lsblk
+echo --------------------------------------------
 echo "Enter Root paritition: (example /dev/sda3)"
 read ROOT
 
 echo "Enter SWAP paritition: (example /dev/sda2)"
 read SWAP
 
-echo "Enter EFI paritition: (example /dev/sda1 or /dev/nvme0n1p1)"
+echo "Enter EFI paritition: (/dev/nvme0n1p1 or /dev/sda1)"
 read EFI
 
-mkfs.ext4 "ROOT" "${ROOT}"
+# Formats
+mkfs.ext4 -L "ROOT" "${ROOT}"
 mkswap "${SWAP}"
-mkfs.fat -F 32 "${EFI}"
+mkfs.fat -F 32 -n "${EFI}"
 
-mount "${ROOT}" /mnt
+# Mount
+mount -t ext4 "${ROOT}" /mnt
 swapon "${SWAP}"
 mkdir -p /mnt/boot/efi
 mount "${EFI}" /mnt/boot/efi
